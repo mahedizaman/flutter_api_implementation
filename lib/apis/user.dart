@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_json_placeholder_api/apis/product.dart';
 import 'package:http/http.dart' as http;
 
 class UserApiPage extends StatefulWidget {
@@ -30,8 +31,26 @@ class _UserApiPageState extends State<UserApiPage> {
 
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
       appBar: AppBar(
+        toolbarHeight: 80,
+        actions: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ProductPage()),
+                  );
+                });
+              },
+              child: Text("Next Api"),
+            ),
+          ),
+        ],
         title: Text(
           'User Api ',
           style: TextStyle(
