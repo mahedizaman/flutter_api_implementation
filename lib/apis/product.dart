@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_json_placeholder_api/apis/posts.dart';
 import 'package:http/http.dart' as http;
 
 class ProductPage extends StatefulWidget {
@@ -37,7 +38,17 @@ class _ProductPageState extends State<ProductPage> {
         actions: [
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: ElevatedButton(onPressed: () {}, child: Text('Next Api')),
+            child: ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => PostsPage()),
+                  );
+                });
+              },
+              child: Text('Next Api'),
+            ),
           ),
         ],
         title: Text('Product Api'),
