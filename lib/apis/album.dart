@@ -51,21 +51,22 @@ class _AlbumApiPageState extends State<AlbumApiPage> {
       body: ListView.builder(
         itemCount: albums.length,
         itemBuilder: (context, index) {
-          return Card(
-            child: Padding(
-              padding: EdgeInsets.all(10),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Expanded(
-                    child: Text(
-                      '${((albums[index]['id']).toString())} .  ${(albums[index]['title'])}',
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(fontSize: 23),
+          return Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 4),
+            child: Card(
+              child: Padding(
+                padding: EdgeInsets.all(6),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Expanded(
+                      child: ListTile(
+                        leading: Text(albums[index]['id'].toString()),
+                        title: Text(albums[index]['title']),
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           );

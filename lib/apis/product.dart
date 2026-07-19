@@ -64,7 +64,7 @@ class _ProductPageState extends State<ProductPage> {
                 elevation: 2,
                 clipBehavior: Clip.antiAlias,
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15),
+                  borderRadius: BorderRadius.circular(10),
                 ),
                 child: ExpansionTile(
                   shape: const Border(),
