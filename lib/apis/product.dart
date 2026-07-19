@@ -58,18 +58,34 @@ class _ProductPageState extends State<ProductPage> {
         itemBuilder: (context, index) {
           return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10.0),
-            child: ExpansionTile(
-              title: Text(photos[index]['title']),
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(25),
-                  child: Image.network(
-                    photos[index]['thumbnailUrl'],
-                    width: 150,
-                    height: 150,
-                  ),
+            child: Padding(
+              padding: const EdgeInsets.all(3.0),
+              child: Card(
+                elevation: 2,
+                clipBehavior: Clip.antiAlias,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15),
                 ),
-              ],
+                child: ExpansionTile(
+                  shape: const Border(),
+                  collapsedShape: const Border(),
+                  dense: true,
+
+                  backgroundColor: Colors.amber,
+                  textColor: const Color.fromARGB(255, 43, 13, 215),
+                  title: Text(photos[index]['title']),
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(25),
+                      child: Image.network(
+                        photos[index]['thumbnailUrl'],
+                        width: 150,
+                        height: 150,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
           );
         },
