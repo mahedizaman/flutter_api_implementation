@@ -47,6 +47,9 @@ class _TodosApiPageState extends State<TodosApiPage> {
                 return Card(
                   margin: const EdgeInsets.only(bottom: 10),
                   child: ListTile(
+                    visualDensity: VisualDensity.compact,
+                    dense: true,
+                    selectedTileColor: const Color.fromARGB(255, 255, 200, 0),
                     leading: CircleAvatar(
                       child: Text(todos[index]['id'].toString()),
                     ),
