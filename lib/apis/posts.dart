@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_json_placeholder_api/apis/album.dart';
 import 'package:http/http.dart' as app;
 
 class PostsPage extends StatefulWidget {
@@ -40,7 +41,15 @@ class _PostsPageState extends State<PostsPage> {
         actions: [
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: ElevatedButton(onPressed: () {}, child: Text('Next Api')),
+            child: ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => AlbumApiPage()),
+                );
+              },
+              child: Text('Next Api'),
+            ),
           ),
         ],
       ),
