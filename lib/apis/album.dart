@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_json_placeholder_api/apis/todos.dart';
 import 'package:http/http.dart' as http;
 
 class AlbumApiPage extends StatefulWidget {
@@ -35,7 +36,17 @@ class _AlbumApiPageState extends State<AlbumApiPage> {
         backgroundColor: Colors.deepOrange,
         toolbarHeight: 80,
         title: Text("Albums Api"),
-        actions: [ElevatedButton(onPressed: () {}, child: Text('Next Api'))],
+        actions: [
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => TodosApiPage()),
+              );
+            },
+            child: Text('Next Api'),
+          ),
+        ],
       ),
       body: ListView.builder(
         itemCount: albums.length,
